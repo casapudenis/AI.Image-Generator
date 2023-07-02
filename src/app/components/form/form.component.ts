@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-form',
@@ -6,9 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent {
+  @Output() generateImage: EventEmitter<{ prompt: string, size: string }> = new EventEmitter<{ prompt: string, size: string }>();
   prompt!: string;
   size!: string;
-
-  generateImage() {
+  onSubmit() {
+    console.log(this.prompt,this.size);
+    this.generateImage.emit({ prompt: this.prompt, size: this.size });
   }
 }

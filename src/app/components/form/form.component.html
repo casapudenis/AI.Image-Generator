@@ -1,13 +1,13 @@
-<form>
-    <h1>Describe An Image</h1>
-    <input type="text" id="prompt" placeholder="Enter Text" [(ngModel)]="prompt" />
-    <br>
-    <select name="size" id="size" [(ngModel)]="size">
-      <option value="small">Small</option>
-      <option value="medium" selected>Medium</option>
-      <option value="large">Large</option>
-    </select>
-    <br>
-    <button type="submit" class="btn">Generate</button>
-  </form>
-  
+<form (ngSubmit)="onSubmit()">
+  <h1>Describe An Image</h1>
+  <input type="text" id="prompt" name="prompt" placeholder="Enter Text" [(ngModel)]="prompt" />
+  <br>
+  <h2>Size:</h2>
+  <select name="size" id="size" [(ngModel)]="size">
+    <option value="256x256">Small</option>
+    <option value="512x512">Medium</option>
+    <option value="1024x1024">Large</option>
+  </select>
+  <br>
+  <button type="submit" class="btn">Generate</button>
+</form>
