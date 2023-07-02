@@ -7,6 +7,7 @@ import { OpenaiService } from '../../services/openai.service';
   styleUrls: ['./imagegenerator.component.scss']
 })
 export class ImagegeneratorComponent {
+  imageUrl: string | undefined;
   constructor(private openaiService: OpenaiService) {
   }
 
@@ -14,6 +15,7 @@ export class ImagegeneratorComponent {
     const { prompt, size } = data;
     this.openaiService.generateImage(prompt, size).subscribe(
       (response: any) => {
+        this.imageUrl = response.data[0].url;;
         console.log(response);
       },
       (error: any) => {
