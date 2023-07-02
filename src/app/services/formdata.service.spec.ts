@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ApikeyService } from './apikey.service';
+import { FormdataService } from './formdata.service';
 
-describe('ApikeyService', () => {
-  let service: ApikeyService;
+describe('FormdataService', () => {
+  let service: FormdataService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(ApikeyService);
+    service = TestBed.inject(FormdataService);
   });
 
   it('should be created', () => {

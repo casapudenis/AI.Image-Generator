@@ -1,27 +1,12 @@
 import { Component } from '@angular/core';
-import { ApikeyService } from '../../services/apikey.service';
-
+import { OpenaiService } from '../../services/openai.service';
+import { FormComponent } from '../form/form.component';
 @Component({
   selector: 'app-imagegenerator',
   templateUrl: './imagegenerator.component.html',
   styleUrls: ['./imagegenerator.component.scss']
 })
 export class ImagegeneratorComponent {
-  constructor(private apikeyService: ApikeyService) { }
-  generateImage() {
-    const apiKey = 'YOUR_API_KEY';
-    const prompt = 'Your prompt text goes here';
+  constructor(private openaiService: OpenaiService) {}
   
-    this.apikeyService.generateImage(apiKey, prompt)
-      .subscribe(
-        (response) => {
-          // Handle the image generation response here
-          console.log(response);
-        },
-        (error) => {
-          // Handle any errors that occurred during the request
-          console.error(error);
-        }
-      );
-  }
 }
