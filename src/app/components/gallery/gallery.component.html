@@ -1,0 +1,6 @@
+<h3>Last generated images:</h3>
+<lightgallery [settings]="settings" [onBeforeSlide]="onBeforeSlide">
+  <a class="gallery-item" *ngFor="let imageUrl of imageUrls" [attr.data-src]="imageUrl" [attr.data-responsive]="imageUrl">
+    <img width="240" height="240" class="img-responsive" [src]="imageUrl" />
+  </a>
+</lightgallery>
